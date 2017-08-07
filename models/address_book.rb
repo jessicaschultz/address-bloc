@@ -47,6 +47,6 @@ class AddressBook
       end
     end
 
-    return nil  
+    return nil
   end
 end
