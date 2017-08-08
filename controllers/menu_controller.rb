@@ -13,7 +13,8 @@ class MenuController
     puts "2 - Create an entry"
     puts "3 - Search for an entry"
     puts "4 - Import entries from a CVS"
-    puts "5 - Exit"
+    puts "5 - delete all entries"
+    puts "6 - Exit"
     print "Enter your selection: "
 
     selection = gets.to_i
@@ -36,6 +37,10 @@ class MenuController
         read_cvs
         main_menu
       when 5
+        system "clear"
+        @address_book.demolish
+        main_menu
+      when 6
         puts "Good-bye!"
 
         exit(0)
@@ -185,5 +190,5 @@ class MenuController
           search_submenu(entry)
       end
     end
-    
+
 end
