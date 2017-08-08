@@ -133,4 +133,18 @@ RSpec.describe AddressBook do
        expect(entry).to be_nil
      end
   end
+
+  describe '#iterative_search' do
+    it 'returns nil if the name is not an entry' do
+      book.import_from_csv("entries.csv")
+      entry = book.iterative_search("Dan")
+      expect(entry).to be_nil
+    end
+
+    it "returns the name if it is an entry" do
+      book.import_from_csv("entries.csv")
+      entry = book.iterative_search("Bill")
+      expect(entry).to eq 'Bill'
+    end
+  end
 end
